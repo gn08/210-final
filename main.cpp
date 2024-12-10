@@ -16,6 +16,7 @@ class CoffeeQueue{
         CoffeeCustomer* head;
         CoffeeCustomer* tail;
     public:
+        CoffeeQueue() : head(nullptr), tail(nullptr) {}
         void enqueue(){
             CoffeeCustomer* newCustomer = new CoffeeCustomer(name, drink);
             if (!tail){
@@ -61,6 +62,27 @@ struct CustomBoothCustomer{
     string name;
     string custome_item;
 };
+
+string getRandomName(const string names[], int size) {
+    return names[rand() % size];
+}
+
+string getRandomDrink(const string drinks[], int size) {
+    return drinks[rand() % size];
+}
+
+string getRandomMuffin(const string muffins[], int size) {
+    return muffins[rand() % size];
+}
+
+string getRandomBracelet(const string bracelets[], int size) {
+    return bracelets[rand() % size];
+}
+
+string getRandomCustomItem(const string items[], int size) {
+    return items[rand() % size];
+}
+
 
 int main(){
     srand(time(0));
