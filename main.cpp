@@ -8,6 +8,7 @@
 
 using namespace std;
 
+//struct for list
 struct CoffeeCustomer {
     string name;
     string drinkOrder;
@@ -15,7 +16,7 @@ struct CoffeeCustomer {
 
     CoffeeCustomer(string n, string d) : name(n), drinkOrder(d), next(nullptr) {}
 };
-
+//linked list class for coffee booth
 class CoffeeQueue{
     private:
         CoffeeCustomer* head;
@@ -57,22 +58,22 @@ class CoffeeQueue{
             return head == nullptr;
         }
 };
-
+//struct for muffin booth customers
 struct MuffinCustomer {
     string name;
     string muffinType;
 };
-
+//struct for bracelet booth customers
 struct BraceletCustomer{
     string name;
     string bracelet_color;
 };
-
+//struct for custom booth customers
 struct CustomBoothCustomer{
     string name;
     string customItem;
 };
-
+//generate random customer data
 string getRandomName(const string names[], int size) {
     return names[rand() % size];
 }
@@ -96,18 +97,18 @@ string getRandomCustomItem(const string items[], int size) {
 
 int main(){
     srand(time(0));
-
+    //create data
     const string names[] = {"Gaby" , "Lilly", "Kalani", "David", "Jayden"};
     const string drinks[] = {"Chai", "Latte", "Matcha", "Espresso", "Mocha"};
     const string muffins[] = {"Choclate", "Banana", "Blueberry", "Vanilla", "Confetti"};
     const string bracelets[]= {"Pink", "Brown", "Green", "Yellow", "Blue"};
     const string custom_items[] = {"Shirt", "Skirt", "Dress", "Pants", "Hat"};
-
+    //coffee booth set
     CoffeeQueue coffeeBooth;
     for (int i = 0; i< 3; ++i){
         coffeeBooth.enqueue(getRandomName(names, 5), getRandomDrink(drinks, 5));
     }
-
+// differengt booth setup
     deque<MuffinCustomer> muffinBooth;
     deque<BraceletCustomer> braceletBooth;
     deque<CustomBoothCustomer> customBooth;
@@ -152,7 +153,7 @@ int main(){
 
         if (!customBooth.empty()){
             cout << "Serving custom customer" << endl;
-            cout << customBooth.front().name << "buys" << customBooth.front().custom_item << endl;
+            cout << customBooth.front().name << "buys" << customBooth.front().customItem << endl;
             customBooth.pop_front();
         } else {
             cout << "No custom customer to serve" << endl;
