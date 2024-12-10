@@ -48,18 +48,26 @@ class CoffeeQueue{
 };
 
 struct MuffinCustomer {
-
+    string name;
+    string muffin_type;
 }
 
 struct BraceletCustomer{
-
+    string name;
+    string bracelet_color;
 }
 
 struct CustomBoothCustomer{
-
+    string name;
+    string custome_item;
 }
 
 int main(){
+    const string names[] = {"Gaby" , "Lilly", "Kalani", "David", "Jayden"};
+    const string drinks[] = {"Chai", "Latte", "Matcha", "Espresso", "Mocha"};
+    const string muffins[] = {"Choclate", "Banana", "Blueberry", "Vanilla", "Confetti"};
+    const string bracelets[]= {"Pink", "Brown", "Green", "Yellow", "Blue"};
+    const string custom_items[] = {"Shirt", "Skirt", "Dress", "Pants", "Hat"};
 
     return 0;
 }
