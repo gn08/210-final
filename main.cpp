@@ -26,11 +26,18 @@ class CoffeeQueue{
 
         void dequeue(){
             if (!head) return;
-            
+            CoffeeCustomer* temp = head;
+            head = head->next;
+            if(!head) tail = nullptr;
+            delete temp;
         }
 
         void printQueue(){
-
+            CoffeeCustomer* current = head;
+            while (current){
+                cout << current->name << " ordered " << current->drinkOrder << endl;
+                current = current -> next;
+            }
         }
 };
 
