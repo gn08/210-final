@@ -10,7 +10,28 @@ struct CoffeeCustomer {
 }
 
 class CoffeeQueue{
+    private:
+        CoffeeCustomer* head;
+        CoffeeCustomer* tail;
+    public:
+        void enqueue(){
+            CoffeeCustomer* newCustomer = new CoffeeCustomer(name, drink);
+            if (!tail){
+                head = tail = newCustomer;
+            } else {
+                tail->next = newCustomer;
+                tail = newCustomer;
+            }
+        }
 
+        void dequeue(){
+            if (!head) return;
+            
+        }
+
+        void printQueue(){
+
+        }
 };
 
 int main(){
