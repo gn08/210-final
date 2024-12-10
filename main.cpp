@@ -86,20 +86,32 @@ int main(){
             coffeeBooth.printQueue();
             coffeeBooth.dequeue();
         } else {
-            cout << "No customer to serve" << endl;
+            cout << "No coffee customer to serve" << endl;
         }
 
         if (!muffinBooth.empty()){
             cout << "Serving muffin customer" << endl;
-            cout << 
+            cout << muffinBooth.front().name << " buys " << muffinBooth.front().muffinType << " muffin" << endl;
+            muffinBooth.pop_front();
+        } else {
+            cout << "No muffin customer to serve" << endl;
         }
 
         if(!braceletBooth.empty()){
-
+            cout << "Serving bracelet customer" << endl;
+            auto customer = braceletBooth.back();
+            cout << customer.name << " buys " << customer.braceletColor << " bracelet" << endl;
+            braceletBooth.pop_back();
+        } else {
+            cout << "No bracelet customer to serve" << endl;
         }
 
         if (!customBooth.empty()){
-
+            cout << "Serving custom customer" << endl;
+            cout << customBooth.front().name << "buys" << customBooth.front().custom_item << endl;
+            customBooth.pop();
+        } else {
+            cout << "No custom customer to serve" << endl;
         }
     }
 
