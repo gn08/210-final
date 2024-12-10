@@ -20,15 +20,20 @@ struct CoffeeCustomer {
 //linked list class for coffee booth
 class CoffeeQueue{
     private:
+    //first customer in que
         CoffeeCustomer* head;
+        //last customer in que
         CoffeeCustomer* tail;
     public:
+    //constructor set empty que
         CoffeeQueue() : head(nullptr), tail(nullptr) {}
+        //destructor frees up memory
         ~CoffeeQueue() {
             while (head) {
                 dequeue();
             }
         }
+        //add new customer to end of queue
         void enqueue(string name, string drink){
             CoffeeCustomer* newCustomer = new CoffeeCustomer(name, drink);
             if (!tail){
@@ -38,7 +43,7 @@ class CoffeeQueue{
                 tail = newCustomer;
             }
         }
-
+//removes customer at front of queue
         void dequeue(){
             if (!head) return;
             CoffeeCustomer* temp = head;
@@ -46,7 +51,7 @@ class CoffeeQueue{
             if(!head) tail = nullptr;
             delete temp;
         }
-
+//prints the queue of coffee customers
         void printQueue(){
             CoffeeCustomer* current = head;
             while (current){
