@@ -7,6 +7,8 @@ struct CoffeeCustomer {
     string name;
     string drink_order;
     CoffeeCustomer * next;
+
+    CoffeeCustomer(string n, string d) : name(n), drinkOrder(d), next(nullptr) {}
 }
 
 class CoffeeQueue{
@@ -39,7 +41,23 @@ class CoffeeQueue{
                 current = current -> next;
             }
         }
+
+        bool isEmpty(){
+            return head == nullptr;
+        }
 };
+
+struct MuffinCustomer {
+
+}
+
+struct BraceletCustomer{
+
+}
+
+struct CustomBoothCustomer{
+
+}
 
 int main(){
 
