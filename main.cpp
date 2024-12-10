@@ -63,6 +63,8 @@ struct CustomBoothCustomer{
 };
 
 int main(){
+    srand(time(0));
+
     const string names[] = {"Gaby" , "Lilly", "Kalani", "David", "Jayden"};
     const string drinks[] = {"Chai", "Latte", "Matcha", "Espresso", "Mocha"};
     const string muffins[] = {"Choclate", "Banana", "Blueberry", "Vanilla", "Confetti"};
@@ -81,12 +83,15 @@ int main(){
     for(int round = 1; round <= 10; ++round){
         cout << "Round" << round << endl;
 
-        if(!coffeeBooh.isEmpty()){
+        if(!coffeeBooth.isEmpty()){
             cout << "Serving coffee customer: " << endl;
             coffeeBooth.printQueue();
             coffeeBooth.dequeue();
         } else {
             cout << "No coffee customer to serve" << endl;
+        }
+        if (rand() % 2 == 0) {
+            coffeeBooth.enqueue(getRandomName(names, 5), getRandomDrink(drinks, 5));
         }
 
         if (!muffinBooth.empty()){
@@ -95,6 +100,9 @@ int main(){
             muffinBooth.pop_front();
         } else {
             cout << "No muffin customer to serve" << endl;
+        }
+        if (rand() % 2 == 0) {
+            muffinBooth.push_back({getRandomName(names, 5), getRandomMuffin(muffins, 4)});
         }
 
         if(!braceletBooth.empty()){
@@ -105,6 +113,10 @@ int main(){
         } else {
             cout << "No bracelet customer to serve" << endl;
         }
+        if (rand() % 2 == 0) {
+            braceletBooth.push_back({getRandomName(names, 5), getRandomBracelet(bracelets, 4)});
+        }
+
 
         if (!customBooth.empty()){
             cout << "Serving custom customer" << endl;
@@ -112,6 +124,9 @@ int main(){
             customBooth.pop();
         } else {
             cout << "No custom customer to serve" << endl;
+        }
+        if (rand() % 2 == 0) {
+            customBooth.push({getRandomName(names, 5), getRandomCustomItem(customItems, 3)});
         }
     }
 
