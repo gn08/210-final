@@ -70,7 +70,7 @@ struct BraceletCustomer{
 
 struct CustomBoothCustomer{
     string name;
-    string customeItem;
+    string customItem;
 };
 
 string getRandomName(const string names[], int size) {
@@ -158,7 +158,7 @@ int main(){
             cout << "No custom customer to serve" << endl;
         }
         if (rand() % 2 == 0) {
-            customBooth.push({getRandomName(names, 5), getRandomCustomItem(customItems, 3)});
+            customBooth.push({getRandomName(names, 5), getRandomCustomItem(custom_items, 3)});
         }
     }
 
