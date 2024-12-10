@@ -10,10 +10,11 @@ using namespace std;
 
 //struct for list
 struct CoffeeCustomer {
+    //sets data types for cu
     string name;
     string drinkOrder;
     CoffeeCustomer * next;
-
+    //constructor to set with name and drink order
     CoffeeCustomer(string n, string d) : name(n), drinkOrder(d), next(nullptr) {}
 };
 //linked list class for coffee booth
@@ -161,6 +162,8 @@ int main(){
         if (rand() % 2 == 0) {
             customBooth.push_back({getRandomName(names, 5), getRandomCustomItem(custom_items, 3)});
         }
+
+        cout << endl;
     }
 
     return 0;
