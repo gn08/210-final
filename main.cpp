@@ -9,7 +9,7 @@ struct CoffeeCustomer {
     CoffeeCustomer * next;
 
     CoffeeCustomer(string n, string d) : name(n), drinkOrder(d), next(nullptr) {}
-}
+};
 
 class CoffeeQueue{
     private:
@@ -50,17 +50,17 @@ class CoffeeQueue{
 struct MuffinCustomer {
     string name;
     string muffin_type;
-}
+};
 
 struct BraceletCustomer{
     string name;
     string bracelet_color;
-}
+};
 
 struct CustomBoothCustomer{
     string name;
     string custome_item;
-}
+};
 
 int main(){
     const string names[] = {"Gaby" , "Lilly", "Kalani", "David", "Jayden"};
@@ -68,6 +68,19 @@ int main(){
     const string muffins[] = {"Choclate", "Banana", "Blueberry", "Vanilla", "Confetti"};
     const string bracelets[]= {"Pink", "Brown", "Green", "Yellow", "Blue"};
     const string custom_items[] = {"Shirt", "Skirt", "Dress", "Pants", "Hat"};
+
+    CoffeeQueue coffeeBooth;
+    for (int i = 0; i){
+        coffeeBooth.enqueue(getRandomName(names, 5), getRandomDrink(drink, 5));
+    }
+
+    deque<MuffinCustomer> muffinBooth;
+    deque<BraceletCustomer> braceletBooth;
+    deque<CustomeBoothCustomer> customBooth;
+
+    for(int round = 1; round <= 10; ++round){
+
+    }
 
     return 0;
 }
