@@ -1,11 +1,16 @@
 #include <iostream>
 #include <string>
+#include <deque>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+#include <queue>
 
 using namespace std;
 
 struct CoffeeCustomer {
     string name;
-    string drink_order;
+    string drinkOrder;
     CoffeeCustomer * next;
 
     CoffeeCustomer(string n, string d) : name(n), drinkOrder(d), next(nullptr) {}
@@ -17,6 +22,11 @@ class CoffeeQueue{
         CoffeeCustomer* tail;
     public:
         CoffeeQueue() : head(nullptr), tail(nullptr) {}
+        ~CoffeeQueue() {
+            while (head) {
+                dequeue();
+            }
+        }
         void enqueue(string name, string drink){
             CoffeeCustomer* newCustomer = new CoffeeCustomer(name, drink);
             if (!tail){
@@ -50,7 +60,7 @@ class CoffeeQueue{
 
 struct MuffinCustomer {
     string name;
-    string muffin_type;
+    string muffinType;
 };
 
 struct BraceletCustomer{
@@ -60,7 +70,7 @@ struct BraceletCustomer{
 
 struct CustomBoothCustomer{
     string name;
-    string custome_item;
+    string customeItem;
 };
 
 string getRandomName(const string names[], int size) {
@@ -94,8 +104,8 @@ int main(){
     const string custom_items[] = {"Shirt", "Skirt", "Dress", "Pants", "Hat"};
 
     CoffeeQueue coffeeBooth;
-    for (int i = 0; i){
-        coffeeBooth.enqueue(getRandomName(names, 5), getRandomDrink(drink, 5));
+    for (int i = 0; i< 3; ++i){
+        coffeeBooth.enqueue(getRandomName(names, 5), getRandomDrink(drinks, 5));
     }
 
     deque<MuffinCustomer> muffinBooth;
@@ -130,7 +140,7 @@ int main(){
         if(!braceletBooth.empty()){
             cout << "Serving bracelet customer" << endl;
             auto customer = braceletBooth.back();
-            cout << customer.name << " buys " << customer.braceletColor << " bracelet" << endl;
+            cout << customer.name << " buys " << customer.bracelet_color << " bracelet" << endl;
             braceletBooth.pop_back();
         } else {
             cout << "No bracelet customer to serve" << endl;
@@ -143,7 +153,7 @@ int main(){
         if (!customBooth.empty()){
             cout << "Serving custom customer" << endl;
             cout << customBooth.front().name << "buys" << customBooth.front().custom_item << endl;
-            customBooth.pop();
+            customBooth.pop_front();
         } else {
             cout << "No custom customer to serve" << endl;
         }
