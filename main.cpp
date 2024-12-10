@@ -76,10 +76,31 @@ int main(){
 
     deque<MuffinCustomer> muffinBooth;
     deque<BraceletCustomer> braceletBooth;
-    deque<CustomeBoothCustomer> customBooth;
+    deque<CustomBoothCustomer> customBooth;
 
     for(int round = 1; round <= 10; ++round){
+        cout << "Round" << round << endl;
 
+        if(!coffeeBooh.isEmpty()){
+            cout << "Serving coffee customer: " << endl;
+            coffeeBooth.printQueue();
+            coffeeBooth.dequeue();
+        } else {
+            cout << "No customer to serve" << endl;
+        }
+
+        if (!muffinBooth.empty()){
+            cout << "Serving muffin customer" << endl;
+            cout << 
+        }
+
+        if(!braceletBooth.empty()){
+
+        }
+
+        if (!customBooth.empty()){
+
+        }
     }
 
     return 0;
