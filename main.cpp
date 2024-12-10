@@ -17,7 +17,7 @@ class CoffeeQueue{
         CoffeeCustomer* tail;
     public:
         CoffeeQueue() : head(nullptr), tail(nullptr) {}
-        void enqueue(){
+        void enqueue(string name, string drink){
             CoffeeCustomer* newCustomer = new CoffeeCustomer(name, drink);
             if (!tail){
                 head = tail = newCustomer;
